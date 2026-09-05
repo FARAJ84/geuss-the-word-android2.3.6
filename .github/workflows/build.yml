@@ -5,14 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '8'
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
         with:
-          api-level: 10
+          packages: 'platforms;android-10 build-tools;23.0.3'
       - name: Build with Ant
         run: |
           cd GuessTheWord
